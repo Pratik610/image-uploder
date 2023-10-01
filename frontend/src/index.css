@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar-links span {
+	font-weight: 700;
+	font-size: 0.9em;
+}
+
+.sidebar {
+	background-color: #0f1010;
+}
+
+.active-link {
+	background-color: #191b20;
+	color: white;
+}
+
+.sidebar-item {
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.upload-files-table td{
+    padding: 15px;
+}
+.upload-files-table th{
+    padding: 15px;
+    background-color: rgb(247, 240, 240);
+    color:black;
+}
+
+.dashboard-content {
+    height:100vh;
+    position: relative;
+    overflow-y: scroll;
+    
+}
+
+.progress-div{
+    background-color: rgb(255, 255, 255);
+    padding: 4em;
+    position: absolute;
+    top:50%;
+    width: 50%;
+    left:50%;
+    translate:-50% -50%
+}
