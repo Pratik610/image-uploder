@@ -334,7 +334,11 @@ const HomeScreen = () => {
 													datalabels: {
 														color: '#ffffff',
 														formatter: (value) => {
-															return (value / images.data.length) * 100 + '%'
+															return (
+																Number(
+																	(value / images.data.length) * 100
+																).toFixed(2) + '%'
+															)
 														},
 														font: {
 															size: 16,

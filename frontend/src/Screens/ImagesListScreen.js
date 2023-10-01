@@ -23,9 +23,7 @@ const ImagesListScreen = () => {
 	} = userAuth
 
 	useEffect(() => {
-		if (!images) {
-			dispatch(getAllImagesDetails())
-		}
+		dispatch(getAllImagesDetails())
 	}, [])
 
 	const downloadFile = (fileStorageName) => {

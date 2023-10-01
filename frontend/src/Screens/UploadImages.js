@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Sidebar from '../Components/Sidebar'
 import { Icon } from '@iconify/react'
+
 import storage from '../firebaseConfig.js'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { ToastContainer, toast } from 'react-toastify'
@@ -9,13 +10,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { getAllImagesDetails } from '../Actions/imageActions'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const UploadImages = () => {
 	const dispatch = useDispatch()
 	const [files, setFile] = useState([])
 	const [progress, setProgress] = useState([])
 	const [showProgress, setShowProgress] = useState(false)
-
+	const navigate = useNavigate()
 	const [uploadedFilesData, setUploadedFilesData] = useState([])
 
 	const userDetails = useSelector((state) => state.userDetails)
@@ -112,9 +113,8 @@ const UploadImages = () => {
 			setTimeout(() => {
 				toast.success('All files uploaded successfully')
 				dispatch(getAllImagesDetails())
+				setFile([])
 			}, 2000)
-
-			setFile([])
 		} catch (error) {
 			console.error('Error uploading files:', error)
 		}
